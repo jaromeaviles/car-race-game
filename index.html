@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Race Game</title>
+
+    <!-- Imports Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Imports Style CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Car Race Game</h1>
+    </header>
+    <div id="game" class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="race-container">
+            <section id="race">
+              <div class="race-track">
+                <div class="track sedan" :style="displayedSpeedSedan"></div>
+              </div>
+              <div class="race-track">
+                <div
+                  class="track sedan-2"
+                  :style="displayedSpeedSedanTwo"
+                ></div>
+              </div>
+              <div class="race-track">
+                <div
+                  class="track sports-car"
+                  :style="displayedSpeedSportsCar"
+                ></div>
+              </div>
+              <div class="wrapper">
+                <button
+                  @click="startRace"
+                  v-if="!winner"
+                  class="btn btn-success"
+                >
+                  Go Race!
+                </button>
+                <h3 v-else-if="winner === 'Sedan'" class="text-success">
+                  Player 1 Wins!
+                </h3>
+                <h3 v-else-if="winner === 'Sedan Two'" class="text-success">
+                  Player 2 Wins!
+                </h3>
+                <h3 v-else-if="winner === 'Sports Car'" class="text-success">
+                  Player 3 Wins!
+                </h3>
+                <button
+                  v-if="restart"
+                  @click="resetAll"
+                  class="btn btn-success"
+                >
+                  Start New Game
+                </button>
+              </div>
+            </section>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="log-container">
+            <h2>Speed Logs</h2>
+            <ul>
+              <li v-for="log in speedLogs">
+                <span class="log-player">{{log.playerName}}</span> runs in
+                <span class="log-speed">{{log.speedRecord}}</span> KPH
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- imports Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

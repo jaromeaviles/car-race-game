@@ -1,0 +1,158 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+}
+
+header {
+  background-color: #2f5061;
+}
+header h1 {
+  text-align: center;
+  padding: 25px;
+  color: white;
+}
+
+.race-container,
+.log-container {
+  margin-top: 40px;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding-bottom: 35px;
+}
+.race-container #race,
+.log-container #race {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  padding-right: 115px;
+  padding-left: 115px;
+}
+.race-container #race .race-track,
+.log-container #race .race-track {
+  width: 100%;
+  height: 20px;
+  border-bottom: 1px solid #3f4146;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  position: relative;
+}
+.race-container #race .race-track:after,
+.log-container #race .race-track:after {
+  content: "";
+  display: block;
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  right: -35px;
+  top: -21px;
+  background: url("../assets/cars/finish-line-flag.png") no-repeat center center;
+  background-size: cover;
+}
+.race-container #race .race-track .track,
+.log-container #race .race-track .track {
+  width: 0%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.race-container #race .race-track .track.sedan:after, .race-container #race .race-track .track.sedan-2:after, .race-container #race .race-track .track.sports-car:after,
+.log-container #race .race-track .track.sedan:after,
+.log-container #race .race-track .track.sedan-2:after,
+.log-container #race .race-track .track.sports-car:after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 45px;
+  position: absolute;
+  right: 0;
+  top: -18px;
+}
+.race-container #race .race-track .track.sedan:after,
+.log-container #race .race-track .track.sedan:after {
+  background: url("../assets/cars/sedan.png") no-repeat center center;
+  background-size: cover;
+}
+.race-container #race .race-track .track.sedan-2:after,
+.log-container #race .race-track .track.sedan-2:after {
+  background: url("../assets/cars/sedan-2.png") no-repeat center center;
+  background-size: cover;
+  height: 80px;
+  top: -52px;
+}
+.race-container #race .race-track .track.sports-car:after,
+.log-container #race .race-track .track.sports-car:after {
+  background: url("../assets/cars/sports-car.png") no-repeat center center;
+  background-size: cover;
+  height: 80px;
+  top: -35px;
+}
+.race-container .wrapper,
+.log-container .wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.race-container .wrapper button,
+.log-container .wrapper button {
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  border: 0;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  margin: 0 auto;
+}
+.race-container .wrapper h3,
+.log-container .wrapper h3 {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.log-container {
+  margin-bottom: 20px;
+}
+.log-container h2 {
+  padding: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+.log-container ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+}
+.log-container ul li {
+  margin: 10px 0;
+}
+.log-container ul li .log-player {
+  color: #2f5061;
+  font-weight: bold;
+}
+.log-container ul li .log-speed {
+  color: #e57f84;
+  font-weight: bold;
+}/*# sourceMappingURL=style.css.map */
